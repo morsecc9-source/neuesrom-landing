@@ -11,6 +11,11 @@
     }
   }
 
+  function trackGA(eventName, params) {
+  if (typeof gtag === "function") {
+    gtag("event", eventName, params || {});
+  }
+}
   // ---------- Theme toggle ----------
   const toggleBtn = document.getElementById("themeToggle");
 
@@ -37,6 +42,7 @@
       localStorage.setItem("theme", next);
       applyTheme(next);
       trackEvent("Theme Toggled", { theme: next });
+      trackGA("theme_toggled", { theme: next });
     });
   }
 
@@ -114,6 +120,7 @@
   if (foundingBtn) {
     foundingBtn.addEventListener("click", () => {
       trackEvent("Founding Access Click");
+      trackGA("founding_access_click");
     });
   }
 })();
