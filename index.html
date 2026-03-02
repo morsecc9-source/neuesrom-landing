@@ -113,10 +113,27 @@
 
 <section class="cta">
   <h2>Emotional control is operational leverage.</h2>
-  <a href="#founding-access" class="primary">Request Access</a>
+
+  <button class="primary" id="betaAccessBtn">Get Beta Access</button>
+
   <p class="limited">A limited-release version is currently available.</p>
 </section>
 
-<script src="script.js"></script>
-</body>
-</html>
+<!-- Beta modal -->
+<div class="modal" id="betaModal" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>Beta Access</h3>
+      <button class="modal-close" id="betaCloseBtn" aria-label="Close">×</button>
+    </div>
+
+    <p class="modal-sub">Choose your platform.</p>
+
+    <div class="modal-actions">
+      <a class="modal-link" href="YOUR_TESTFLIGHT_LINK_HERE" target="_blank" rel="noopener">iOS (TestFlight)</a>
+      <a class="modal-link" href="YOUR_ANDROID_TEST_LINK_HERE" target="_blank" rel="noopener">Android (Test)</a>
+    </div>
+
+    <p class="modal-note">If access is full, request Founding Access above.</p>
+  </div>
+</div>
