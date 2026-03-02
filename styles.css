@@ -56,6 +56,95 @@ h1 {
   font-size: 0.9rem;
 }
 
+/* --- MailerLite embed: make it match Neuesrom --- */
+.founding-access {
+  margin-top: 18px;
+  max-width: 460px;
+}
+
+#mlb2-37883176.ml-form-embedContainer {
+  width: 100% !important;
+}
+
+#mlb2-37883176 .ml-form-embedWrapper {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 460px !important;
+}
+
+#mlb2-37883176 .ml-form-embedBody,
+#mlb2-37883176 .ml-form-successBody {
+  padding: 0 !important;
+}
+
+#mlb2-37883176 .ml-form-embedContent h4,
+#mlb2-37883176 .ml-form-successContent h4 {
+  margin: 0 0 10px 0 !important;
+  text-align: left !important;
+  color: #e8edf7 !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  font-family: inherit !important;
+}
+
+#mlb2-37883176 .ml-form-successContent p {
+  margin: 0 !important;
+  color: rgba(232, 237, 247, 0.78) !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* input */
+#mlb2-37883176 input.form-control {
+  width: 100% !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #e8edf7 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 10px !important;
+  padding: 12px 12px !important;
+  outline: none !important;
+  font-family: inherit !important;
+}
+
+#mlb2-37883176 input.form-control::placeholder {
+  color: rgba(232, 237, 247, 0.55) !important;
+}
+
+#mlb2-37883176 input.form-control:focus {
+  border-color: rgba(76, 125, 255, 0.7) !important;
+  box-shadow: 0 0 0 4px rgba(76, 125, 255, 0.18) !important;
+}
+
+/* button */
+#mlb2-37883176 .ml-form-embedSubmit button.primary {
+  width: 100% !important;
+  margin-top: 10px !important;
+  background: #4c7dff !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  font-weight: 700 !important;
+  font-family: inherit !important;
+  cursor: pointer !important;
+}
+
+#mlb2-37883176 .ml-form-embedSubmit button.primary:hover {
+  filter: brightness(1.05);
+}
+
+#mlb2-37883176 .ml-form-embedSubmit button.primary:active {
+  transform: translateY(1px);
+}
+
+/* hide any stray paragraph spacing that MailerLite sometimes injects */
+#mlb2-37883176 .ml-form-embedContent p {
+  display: none !important;
+}
 .system div {
   padding: 15px 0;
   border-bottom: 1px solid var(--surface);
