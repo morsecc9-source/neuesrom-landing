@@ -6,24 +6,25 @@ toggle.addEventListener("click", () => {
     html.dataset.theme === "dark" ? "light" : "dark";
 });
 
-const betaBtn = document.getElementById("betaAccessBtn");
-const modal = document.getElementById("betaModal");
-const closeBtn = document.getElementById("betaCloseBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const betaBtn = document.getElementById("betaAccessBtn");
+  const modal = document.getElementById("betaModal");
+  const closeBtn = document.getElementById("betaCloseBtn");
 
-betaBtn.addEventListener("click", () => {
-  modal.setAttribute("aria-hidden", "false");
-});
+  // Quick diagnostics
+  console.log("betaBtn:", !!betaBtn, "modal:", !!modal, "closeBtn:", !!closeBtn);
 
-closeBtn.addEventListener("click", () => {
-  modal.setAttribute("aria-hidden", "true");
-});
+  if (!betaBtn || !modal || !closeBtn) return;
 
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
+  betaBtn.addEventListener("click", () => {
+    modal.setAttribute("aria-hidden", "false");
+  });
+
+  closeBtn.addEventListener("click", () => {
     modal.setAttribute("aria-hidden", "true");
-  }
-});
+  });
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.setAttribute("aria-hidden", "true");
+  });
 });
