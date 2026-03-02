@@ -122,28 +122,41 @@ h1 {
 /* button */
 #mlb2-37883176 .ml-form-embedSubmit button.primary {
   width: 100% !important;
-  margin-top: 10px !important;
-  background: #4c7dff !important;
+  margin-top: 12px !important;
+  background: linear-gradient(135deg, #4c7dff 0%, #3f6be6 100%) !important;
   color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border: none !important;
   border-radius: 10px !important;
-  padding: 12px 14px !important;
+  padding: 14px 16px !important;
   font-weight: 700 !important;
   font-family: inherit !important;
   cursor: pointer !important;
+  transition: all 0.15s ease !important;
 }
 
 #mlb2-37883176 .ml-form-embedSubmit button.primary:hover {
-  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(76, 125, 255, 0.35);
 }
 
 #mlb2-37883176 .ml-form-embedSubmit button.primary:active {
   transform: translateY(1px);
+  box-shadow: none;
 }
 
-/* hide any stray paragraph spacing that MailerLite sometimes injects */
-#mlb2-37883176 .ml-form-embedContent p {
-  display: none !important;
+/* Force full consistent width */
+#mlb2-37883176 .ml-form-formContent,
+#mlb2-37883176 .ml-form-fieldRow,
+#mlb2-37883176 .ml-form-embedSubmit {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#mlb2-37883176 input.form-control,
+#mlb2-37883176 .ml-form-embedSubmit button.primary {
+  width: 100% !important;
+  display: block !important;
+  box-sizing: border-box !important;
 }
 .system div {
   padding: 15px 0;
