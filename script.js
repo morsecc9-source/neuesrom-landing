@@ -1,30 +1,30 @@
-const toggle = document.getElementById("themeToggle");
+(() => {
+  const root = document.documentElement; // <html>
+  const toggleBtn = document.getElementById("themeToggle");
 
-toggle.addEventListener("click", () => {
-  const html = document.documentElement;
-  html.dataset.theme =
-    html.dataset.theme === "dark" ? "light" : "dark";
-});
+  if (!toggleBtn) {
+    console.warn("themeToggle button not found");
+    return;
+  }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const betaBtn = document.getElementById("betaAccessBtn");
-  const modal = document.getElementById("betaModal");
-  const closeBtn = document.getElementById("betaCloseBtn");
+  const applyTheme = (theme) => {
+    root.setAttribute("data-theme", theme);
+    toggleBtn.textContent = theme === "dark" ? "◐" : "☀";
+    toggleBtn.setAttribute("aria-pressed", String(theme === "light"));
+    toggleBtn.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+    );
+  };
 
-  // Quick diagnostics
-  console.log("betaBtn:", !!betaBtn, "modal:", !!modal, "closeBtn:", !!closeBtn);
+  // Load saved theme, default to dark
+  const saved = localStorage.getItem("theme");
+  applyTheme(saved === "light" ? "light" : "dark");
 
-  if (!betaBtn || !modal || !closeBtn) return;
-
-  betaBtn.addEventListener("click", () => {
-    modal.setAttribute("aria-hidden", "false");
+  toggleBtn.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme") || "dark";
+    const next = current === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", next);
+    applyTheme(next);
   });
-
-  closeBtn.addEventListener("click", () => {
-    modal.setAttribute("aria-hidden", "true");
-  });
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.setAttribute("aria-hidden", "true");
-  });
-});
+})();
