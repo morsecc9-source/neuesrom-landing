@@ -10,19 +10,18 @@ const betaBtn = document.getElementById("betaAccessBtn");
 const modal = document.getElementById("betaModal");
 const closeBtn = document.getElementById("betaCloseBtn");
 
-function openModal() {
+betaBtn.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", "false");
-}
+});
 
-function closeModal() {
+closeBtn.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", "true");
-}
+});
 
-betaBtn?.addEventListener("click", openModal);
-closeBtn?.addEventListener("click", closeModal);
-
-modal?.addEventListener("click", (e) => {
-  if (e.target === modal) closeModal();
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.setAttribute("aria-hidden", "true");
+  }
 });
 
 document.addEventListener("keydown", (e) => {

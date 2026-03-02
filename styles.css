@@ -221,3 +221,68 @@ html {
 }
 
 .modal-note { margin-top: 12px; font-size: 13px; opacity: 0.7; }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 16px;
+  background: #0c1018;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 24px;
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.modal-link {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: white;
+  text-decoration: none;
+}
+
+.modal-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.modal-note {
+  margin-top: 14px;
+  font-size: 13px;
+  opacity: 0.7;
+}
